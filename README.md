@@ -23,4 +23,16 @@ Compreender as implicações práticas no tamanho dos registros, limitação de 
 Movido integralmente ao próximo bloco.
 #### Com espalhamento
  Parte do registro gravado no bloco atual, e o restante no bloco
+## Saída esperada: 
+Digite o tamanho máximo do bloco (em bytes): 500\
+Quantos alunos gerar: 10\
+1 - Tamanho fixo 2 - Tamanho variável: 1\
+Bloco 0: 360 bytes (72.0%)   
+Bloco 1: 360 bytes (72.0%)   
+Bloco 2: 360 bytes (72.0%)   
+Bloco 3: 360 bytes (72.0%)   
+Bloco 4: 360 bytes (72.0%)   
 
+Total de blocos: 5\
+Blocos parcialmente usados: 5\
+Eficiência total: 72.0%      
