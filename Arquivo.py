@@ -170,6 +170,7 @@ def main():
                     bloco_atual = Bloco(tamanho_bloco, bloco_indice)
 
     if bloco_atual.ocupado > 0:
+        bloco_atual.gravar_em_arquivos()
         blocos_usados.append(bloco_atual)
 
    
