@@ -71,7 +71,6 @@ class Bloco:
         with open(nome_arquivo, "ab") as arquivo:
             for registro in self.bloco:
                 arquivo.write(registro)
-        print(f"Bloco {self.indice_bloco} gravado ({len(self.bloco)} registros, {self.ocupado} bytes).")
 
     def registro_contiguo(self, registro_embytes)-> bool:
         tamanho_registro = len(registro_embytes)
@@ -160,25 +159,23 @@ def main():
                 bloco_atual = Bloco(tamanho_bloco, bloco_indice)
                 bloco_atual.registro_contiguo(registro_embytes)
 
-        elif modo == 2 and modo_variavel == 2:  # Modo variável espalhado
+        elif modo == 2 and modo_variavel == 2:
             restante = registro_embytes
             while len(restante) > 0:
                 restante = bloco_atual.registro_espalhado(restante)
                 if len(restante) > 0:
-                    bloco_atual.gravar_em_arquivo()
+                    bloco_atual.gravar_em_arquivos()
                     blocos_usados.append(bloco_atual)
                     bloco_indice += 1
                     bloco_atual = Bloco(tamanho_bloco, bloco_indice)
 
     if bloco_atual.ocupado > 0:
+        bloco_atual.gravar_em_arquivos()
         blocos_usados.append(bloco_atual)
 
    
     bloco_unico.gravar_arquivo_unico()
-
-    for b in blocos_usados:
-        b.gravar_em_arquivos()
-
+    
     estat = Estatisticas(blocos_usados)
     estat.calcular(tamanho_bloco)
 
