@@ -12,11 +12,11 @@ Compreender as implicações práticas no tamanho dos registros, limitação de 
 * Diferentes estratégias de organização: 1- Registros de tamanho fixo; 2 - Tamanho variável, tendo esse com duas variações, sendo contíguos e espalhados.
 * Estatísticas: Exibição do uso dos blocos e eficiência de armazenamento
 ## Regras de Armazenamento
-### 1. Tamanho fixo
+### - Tamanho fixo
 * Todos os registros ocupam o mesmo número de bytes.
 * Caso um campo não utilize todos bytes, preenche-se com caracteres especiais (#,%,&)
 * Cada registro deve ser armazenado integralmente dentro de um único bloco.
-### 1. Tamanho Variável
+### - Tamanho Variável
 * Tamanho dos registros depende do conteúdo real.
 * Quando não couber em um bloco usa-se as duas abordagens: 
 #### Sem espalhamento
